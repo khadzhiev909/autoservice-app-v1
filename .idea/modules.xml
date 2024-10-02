@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AutoServiceApp.iml" filepath="$PROJECT_DIR$/AutoServiceApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/booking-service/booking-service.iml" filepath="$PROJECT_DIR$/booking-service/booking-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-service/client-service.iml" filepath="$PROJECT_DIR$/client-service/client-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/communication-service/communication-service.iml" filepath="$PROJECT_DIR$/communication-service/communication-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discount-promotion-service/discount-promotion-service.iml" filepath="$PROJECT_DIR$/discount-promotion-service/discount-promotion-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-service/inventory-service.iml" filepath="$PROJECT_DIR$/inventory-service/inventory-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new-parts-sertvice/new-parts-sertvice.iml" filepath="$PROJECT_DIR$/new-parts-sertvice/new-parts-sertvice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notifications-service/notifications-service.iml" filepath="$PROJECT_DIR$/notifications-service/notifications-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/report-service/report-service.iml" filepath="$PROJECT_DIR$/report-service/report-service.iml" />
+    </modules>
+  </component>
+</project>
