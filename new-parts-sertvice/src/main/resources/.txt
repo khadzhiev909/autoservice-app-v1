@@ -1,0 +1,9 @@
+spring.application.name=new-parts-sertvice
+server.port=8991
+spring.datasource.url=jdbc:postgresql://localhost:5808/postgres
+spring.datasource.username=postgres
+spring.datasource.password=12345
+spring.jpa.hibernate.ddl-auto=create
+
+#docker run --name new_parts_service -p 5808:5432 -e POSTGRES_PASSWORD=12345 -d postgres
+

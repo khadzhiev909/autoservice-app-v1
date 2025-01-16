@@ -1,0 +1,58 @@
+<jasperReport name="SimpleReport" language="java">
+
+    <field name="name" class="java.lang.String"/>
+    <field name="price" class="java.lang.Long"/>
+    <!-- Заголовок отчета -->
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Пример отчета]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- Шапка страницы -->
+    <pageHeader>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="20"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Отчет создан JasperReports]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+
+    <!-- Основное содержимое -->
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="210" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <!-- Подвал страницы -->
+    <pageFooter>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="20"/>
+                <textElement textAlignment="Center">
+                    <font size="10"/>
+                </textElement>
+                <text>1</text>
+            </staticText>
+        </band>
+    </pageFooter>
+
+</jasperReport>

@@ -1,0 +1,82 @@
+<jasperReport name="Service Report" language="java">
+    <parameter name="REPORT_TITLE" class="java.lang.String"/>
+
+    <!-- Поля, соответствующие классам в entity -->
+    <!--(field) Определяет поле, получаемое из источника данных.-->
+    <field name="customerName" class="java.lang.String"/><!--Имя кастомера:  Alex Borunov-->
+    <field name="serviceDescription" class="java.lang.String"/><!--Имя услуги: замена масла-->
+    <field name="price" class="java.math.BigDecimal"/><!--Цена за определенную услугу-->
+    <field name="appointmentDate" class="java.util.Date"/><!--Дата оказания услуги-->
+    <field name="employeeName" class="java.lang.String"/><!--Имя мастера-->
+
+    <title> <!--Определяет заголовок отчета, отображаемый на первой странице.-->
+        <band height="40"><!--Используются для размещения элементов (текстов, таблиц, изображений) на различных полосах (заголовок, тело отчета, подвал).-->
+            <textField><!--Отображает данные из полей, параметров или переменных.-->
+                <!--<reportElement>: Определяет позицию и размер.-->
+                <reportElement x="0" y="0" width="500" height="30"/>
+                <!--<textFieldExpression>: Указывает источник данных.-->
+                <textFieldExpression><![CDATA[$P{REPORT_TITLE}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="20">
+            <!--Выводит статический (неизменяемый) текст.-->
+            <staticText>
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <text><![CDATA[Customer Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="0" width="200" height="20"/>
+                <text><![CDATA[Service Names]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="300" y="0" width="100" height="20"/>
+                <text><![CDATA[Service Price]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="400" y="0" width="100" height="20"/>
+                <text><![CDATA[Appointment Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="400" y="0" width="100" height="20"/>
+                <text><![CDATA[Employee Name]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!--Основная полоса, где отображаются записи из источника данных.-->
+    <detail>
+        <band height="20">
+            <!-- Customer Name -->
+            <textField>
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+            </textField>
+
+            <!-- Service Names -->
+            <textField>
+                <reportElement x="100" y="0" width="200" height="20"/>
+                <textFieldExpression><![CDATA[$F{serviceDescription}]]></textFieldExpression>
+            </textField>
+            <!-- Total Service Price -->
+            <textField>
+                <reportElement x="300" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+            </textField>
+
+            <!-- Appointment Date -->
+            <textField>
+                <reportElement x="400" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{appointmentDate}]]></textFieldExpression>
+            </textField>
+
+            <!-- Appointment Status -->
+            <textField>
+                <reportElement x="500" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{employeeName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

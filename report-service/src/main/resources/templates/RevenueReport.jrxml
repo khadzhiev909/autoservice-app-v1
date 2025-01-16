@@ -1,0 +1,86 @@
+<jasperReport name="Revenue Report" language="java">
+    <parameter name="REPORT_TITLE" class="java.lang.String"/>
+    <parameter name="START_DATE" class="java.util.Date"/>
+    <parameter name="END_DATE" class="java.util.Date"/>
+    <parameter name="SERVICE_TYPES" class="java.util.List"/>
+    <parameter name="TOTAL_REVENUE" class="java.math.BigDecimal"/>
+
+    <!-- Поля, соответствующие классам в entity -->
+    <field name="amount" class="java.math.BigDecimal"/>
+    <field name="issuedAt" class="java.util.Date"/>
+    <field name="serviceType" class="java.lang.String"/>
+    <field name="serviceCount" class="java.lang.Integer"/>
+    <field name="serviceRevenue" class="java.math.BigDecimal"/>
+
+    <title>
+        <band height="60">
+            <textField>
+                <reportElement x="0" y="0" width="500" height="30"/>
+                <textFieldExpression><![CDATA[$P{REPORT_TITLE}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="0" y="30" width="500" height="20"/>
+                <textFieldExpression><![CDATA["Period: " + $P{START_DATE} + " to " + $P{END_DATE}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <text><![CDATA[Service Type]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="0" width="100" height="20"/>
+                <text><![CDATA[Count]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="0" width="100" height="20"/>
+                <text><![CDATA[Revenue]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="300" y="0" width="100" height="20"/>
+                <text><![CDATA[Date]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{serviceType}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="100" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{serviceCount}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="200" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{serviceRevenue}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{issuedAt}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <summary>
+        <band height="40">
+            <staticText>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <text><![CDATA[Total Revenue for Period:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="200" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$P{TOTAL_REVENUE}]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>
