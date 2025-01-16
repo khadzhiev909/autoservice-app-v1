@@ -3,6 +3,8 @@ package com.example.inventoryservice.service;
 import com.example.inventoryservice.entity.Part;
 import com.example.inventoryservice.repository.PartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -17,22 +19,26 @@ public class PartService {
         this.partRepository = partRepository;
     }
 
-    public List<Part> getAllParts() {
-        return partRepository.findAll();
+//    public List<Part> getAllParts() {
+//        return partRepository.findAll();
+//    }
+//
+//    public Optional<Part> getPartById(Long id) {
+//        return partRepository.findById(id);
+//    }
+//
+//    public Part savePart(Part part) {
+//        if (part == null) {
+//            throw new RuntimeException("Запчасть не добавлена");
+//        }
+//        return partRepository.save(part);
+//    }
+//
+    public Page<Part> getAllParts(Pageable pageable) {
+        return partRepository.getAllParts(pageable);
     }
-
-    public Optional<Part> getPartById(Long id) {
-        return partRepository.findById(id);
-    }
-
-    public Part savePart(Part part) {
-        if (part == null) {
-            throw new RuntimeException("Запчасть не добавлена");
-        }
-        return partRepository.save(part);
-    }
-
-    public void deletePart(Long id) {
-        partRepository.deleteById(id);
-    }
+//
+//    public void deletePart(Long id) {
+//        partRepository.deleteById(id);
+//    }
 }

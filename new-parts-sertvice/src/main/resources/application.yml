@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: new-parts-sertvice
+
+  datasource:
+    url: jdbc:postgresql://localhost:5808/postgres
+    username: postgres
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: create
+server:
+  port: 8991
+
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: part-search-group
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+resilience4j:
+  retry:
+    instances:
+      supplierClient:
+        max-attempts: 3
+        wait-duration: 500ms
+  circuitbreaker:
+    instances:
+      supplierClient:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 60s
+  timeLimiter:
+    instances:
+      supplierClient:
+        timeoutDuration: 2000ms
+
+
+#docker run --name new_parts_service -p 5808:5432 -e POSTGRES_PASSWORD=12345 -d postgres
+

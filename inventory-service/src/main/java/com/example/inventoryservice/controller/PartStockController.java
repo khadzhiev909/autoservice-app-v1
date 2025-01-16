@@ -40,7 +40,7 @@ public class PartStockController {
         Optional<PartStock> partStock = partStockService.getPartStockById(id);
         if (partStock.isPresent()) {
             PartStock updatedPartStock = partStock.get();
-            updatedPartStock.setPart(partStockDetails.getPart());
+//            updatedPartStock.setPart(partStockDetails.getPart());
             updatedPartStock.setWarehouse(partStockDetails.getWarehouse());
             updatedPartStock.setQuantity(partStockDetails.getQuantity());
             return ResponseEntity.ok(partStockService.savePartStock(updatedPartStock));

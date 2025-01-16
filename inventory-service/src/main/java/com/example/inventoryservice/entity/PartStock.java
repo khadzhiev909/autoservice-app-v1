@@ -19,10 +19,10 @@ public class PartStock { //Наличие запчастей на складе
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "part_id", nullable = false)
-    @JsonBackReference
-    private Part part;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "part_id", nullable = false)
+//    @JsonBackReference
+//    private Part part;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "warehouse_id", nullable = false)

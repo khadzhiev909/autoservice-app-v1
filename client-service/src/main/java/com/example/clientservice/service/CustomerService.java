@@ -1,21 +1,28 @@
 package com.example.clientservice.service;
 
+import com.example.clientservice.dto.AppointmentDTO;
+import com.example.clientservice.entity.Appointment;
 import com.example.clientservice.entity.Customer;
 import com.example.clientservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class CustomerService {
+    private final Logger logger = Logger.getLogger("CustomerService");
 
     private final CustomerRepository customerRepository;
+    private final KafkaTemplate<String, AppointmentDTO> kafkaProducer;
 
     @Autowired
-    public CustomerService(CustomerRepository customerRepository) {
+    public CustomerService(CustomerRepository customerRepository, KafkaTemplate<String, AppointmentDTO> kafkaProducer) {
         this.customerRepository = customerRepository;
+        this.kafkaProducer = kafkaProducer;
     }
 
     // Сохранение нового клиента
@@ -58,4 +65,8 @@ public class CustomerService {
         }
         customerRepository.deleteById(id);
     }
+
+
+
+
 }

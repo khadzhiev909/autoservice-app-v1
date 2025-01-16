@@ -1,5 +1,4 @@
 package com.example.inventoryservice.entity;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
@@ -33,10 +31,6 @@ public class Part { //Запчасть
     private BigDecimal price;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Condition condition;
-
-    @Column(nullable = false)
     private int quantity;
 
     private String description;
@@ -47,18 +41,25 @@ public class Part { //Запчасть
     @Column(nullable = false)
     private LocalDate addedDate;
 
-    @OneToMany(mappedBy = "part", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<PartStock> partStocks;
+    public Part(String name, String category, String brand, BigDecimal price, int quantity, String description, String partNumber, LocalDate addedDate) {
+        this.name = name;
+        this.category = category;
+        this.brand = brand;
+        this.price = price;
+        this.quantity = quantity;
+        this.description = description;
+        this.partNumber = partNumber;
+        this.addedDate = addedDate;
+    }
 
-    @OneToMany(mappedBy = "part", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<Supply> supplies;
+    //    @OneToMany(mappedBy = "part", cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    private List<PartStock> partStocks;
+//
+//    @OneToMany(mappedBy = "part", cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    private List<Supply> supplies;
 
     // Getters and Setters
     // ...
-}
-
-enum Condition {
-    NEW, USED
 }

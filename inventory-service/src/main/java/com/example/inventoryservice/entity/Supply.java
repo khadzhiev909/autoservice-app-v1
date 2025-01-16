@@ -23,9 +23,9 @@ public class Supply { //Поставки
     @JoinColumn(name = "supplier_id", nullable = false)
     private Supplier supplier;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "part_id", nullable = false)
-    private Part part;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "part_id", nullable = false)
+//    private Part part;
 
     @Column(nullable = false)
     private BigDecimal supplyPrice;

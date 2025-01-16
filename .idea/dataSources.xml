@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="f3cf5823-91f2-4d41-8d16-4fec05be439b">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="2bb85012-0f5d-4c66-ba80-00489acb3664">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5808/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="postgres@localhost [2]" uuid="8848afc0-76cf-496d-960a-b074f66e3137">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5439/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="postgres@localhost [2]" uuid="a1cb6b35-7f23-4cce-81ab-becab1cb03f8">
+    <data-source source="LOCAL" name="postgres@localhost [3]" uuid="a3c581d8-0d0f-4352-9086-8b10d9e057ca">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
