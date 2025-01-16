@@ -33,7 +33,6 @@ import java.util.logging.Logger;
 public class ReportService {
     private final ReportRepository reportRepository;
     private final AppointmentService appointmentService;
-
     private final Logger logger = Logger.getLogger("ReportService.class");
 
 //    private RedisTemplate<String, Object> redisTemplate;
